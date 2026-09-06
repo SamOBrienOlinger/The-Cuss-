@@ -14,7 +14,7 @@ A playful browser-based generator that combines a name with three randomly selec
 
 ## Getting started
 
-Requires a browser and a local HTTP server. Python 3 provides one without installing application packages.
+Requires Git, a browser and a local HTTP server. Python 3 provides one without installing application packages.
 
 ```bash
 git clone https://github.com/SamOBrienOlinger/The-Cuss-.git
