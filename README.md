@@ -4,13 +4,37 @@ A playful browser-based generator that combines a name with three randomly selec
 
 **HTML · CSS · JavaScript**
 
-[Visit the website](https://samobrienolinger.github.io/The-Cuss-/) · [Getting started](#getting-started) · [Repository guide](#repository-guide) · [Checks](#checks-and-review) · [Credits](#credits-and-reuse)
+[Visit the website](https://samobrienolinger.github.io/The-Cuss-/) · [Getting started](#getting-started) · [Data model](#entity-relationship-diagram) · [Repository guide](#repository-guide) · [Checks](#checks-and-review) · [Credits](#credits-and-reuse)
 
 ## What you can explore
 
 - Enter a name.
 - Generate the beginning, middle and ending of a phrase.
 - Repeat the sequence to explore different combinations.
+
+## Entity relationship diagram
+
+The generator combines an entered name with three phrase slots. Each slot draws from its own list, and the final message combines the selected phrases in order. The browser holds the selections in the page. [Phrase lists and generator](assets/js/script.js)
+
+```mermaid
+erDiagram
+    accTitle: The Cuss You Are phrase generator
+    accDescr: A generated phrase uses an entered name and three ordered slots. Each slot draws one text option from its own list.
+    "Phrase Draft" ||--|{ "Phrase Slot" : contains
+    "Phrase Slot" ||--|{ "Phrase Option" : offers
+
+    "Phrase Draft" {
+        string name
+        string finalText
+    }
+    "Phrase Slot" {
+        number position
+        string selection
+    }
+    "Phrase Option" {
+        string text
+    }
+```
 
 ## Getting started
 
